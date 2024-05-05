@@ -22,7 +22,7 @@ function draw_grid(context, case_length, couleur_stroke, couleur_fill) {
         context.moveTo(0, y);
         context.lineTo(width, y);
         context.lineWidth = (y % (5*tailleCase) == 0) ? 0.5 : 0.25;
-        //Affiche coordonnéeif(y % (5*tailleCase) == 0 ) {context.fillText(y, 0, y + 10);} /*Affiche coordonnée*/
+        //if(y % (5*tailleCase) == 0 ) {context.fillText(y, 0, y + 10);} /*Affiche coordonnée*/
         context.stroke();
     }
     context.restore();

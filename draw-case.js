@@ -7,7 +7,7 @@ function draw_case(context, matrice, couleur, tailleCase, nbr_case_haut, nbr_cas
     matrice = matrice || getMatrix(nbr_case_haut, nbr_case_larg);
     var nb_case = 0;
     console.table(matrice);
-    
+
     context.fillStyle = couleur;
     for(var x = 0; x < nbr_case_haut; x++) { //ligne
         //console.log(matrice[x]);
@@ -20,5 +20,5 @@ function draw_case(context, matrice, couleur, tailleCase, nbr_case_haut, nbr_cas
             }
         }
     }
-    console.log("Nombre de case colorié : " + nb_case + "/" + (nbr_case_haut*nbr_case_larg));
+    //console.log("Nombre de case colorié : " + nb_case + "/" + (nbr_case_haut*nbr_case_larg));
 }
