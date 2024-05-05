@@ -1,7 +1,7 @@
 function update_matrice(matrice) {
     const getMatrix = (ligne, colonne) => [...Array(ligne)].map(x => [...Array(colonne)].map(b => 0));
-    var tmp_matrice = getMatrix(matrice.length, matrice[0].length),
-    //modif = getMatrix(matrice.length, matrice[0].length);
+    var tmp_matrice = getMatrix(matrice.length, matrice[0].length);
+    //var modif = getMatrix(matrice.length, matrice[0].length);
     
     for(var x = 0; x < matrice.length; x++) {
         for(var y = 0; y < matrice[x].length; y++) {
