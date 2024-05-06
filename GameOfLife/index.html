@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="draw-grid.js"></script>
+    <script src="draw-case.js"></script>
+    <script src="update-case.js"></script>
+    <title>Game of Life</title>
+</head>
+<body>
+    <h1>Tout est possible, tout est réalisable</h1>
+    <canvas id="life" width="400" height="400"></canvas>
+    <div><button id="start" disabled>Start</button> <button id="stop" disabled>Stop</button></div>
+    <script>
+        var canvas = document.getElementById("life");
+        var context = canvas.getContext("2d");
+        var tailleCase = 5;
+        var nbr_case_largeur = 85;
+        var nbr_case_hauteur = 85;
+        canvas.width = nbr_case_largeur*tailleCase;
+        canvas.height = nbr_case_hauteur*tailleCase;
+
+        //create a matrix with 0 or 1
+        const getMatrix = (ligne, colonne) => [...Array(ligne)].map(x => [...Array(colonne)].map(b => Math.round(Math.random()*0.6)));
+        var matrice = getMatrix(nbr_case_hauteur, nbr_case_largeur);
+
+        function frame() {
+            context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+            draw(context);
+            update();
+        }
+
+        function update() {
+            matrice = update_matrice(matrice);
+        }
+
+        function draw(context) {
+            draw_grid(context, tailleCase, "#00FF00", "#009900");
+            draw_case(context, matrice, "#ffffff", tailleCase, nbr_case_hauteur, nbr_case_largeur);
+        }
+
+        setInterval(frame, 1000);
+    </script>
+</body>
+</html>
